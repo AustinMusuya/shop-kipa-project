@@ -1,0 +1,953 @@
+/* this is an import statement importing a font from the Google Fonts API and making it available for use in the web page */
+
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* general styling for redundant elements within the web page */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700px;
+  font-size: 12px;
+}
+
+body {
+  width: 100%;
+}
+.section-p1 {
+  padding: 40px 80px;
+}
+.section-m1 {
+  margin: 40px 0;
+}
+
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+button.white {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+}
+
+/*Header styling starts here*/
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 80px; /*padding was set to -4px inorder to have the logo at the far most left of the webpage*/
+  background: #292929;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00ff11cc;
+}
+#navbar li a:hover,
+#navbar li a.active {
+  color: yellow;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: yellow;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+#mobile {
+  display: none;
+  align-items: center;
+}
+
+#close {
+  display: none;
+}
+
+/* Home page styling */
+#hero {
+  background-image: url("./Images/camping3.jpg");
+  height: 110vh;
+  width: 100%;
+  background-size: cover;
+  background-position:
+    top 25%,
+    right 0;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#hero h1 {
+  color: #00ff11cc;
+}
+
+#hero p {
+  color: white;
+  padding: 15px;
+}
+
+#hero button {
+  background-image: url("./Images/wooden\ button.png");
+  color: #000;
+  border: 0;
+  padding: 14px 80px 14px 65px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+#features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#features .fe-box {
+  width: 180px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.07);
+  border: 1px solid #cce7d0;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+#features .fe-box :hover {
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#features .fe-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#features .fe-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  color: white;
+  background-color: darksalmon;
+}
+
+#features .fe-box:nth-child(2) h6 {
+  background-color: darkturquoise;
+}
+
+#features .fe-box:nth-child(3) h6 {
+  background-color: #0aa014cc;
+}
+
+#features .fe-box:nth-child(4) h6 {
+  background-color: darkorange;
+}
+
+#features .fe-box:nth-child(5) h6 {
+  background-color: red;
+}
+
+#products {
+  text-align: center;
+}
+
+#products .pro-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#products .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+#products .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.09);
+}
+
+#products .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#products .pro .description {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#products .pro .description span {
+  color: #606063;
+  font-size: 12px;
+}
+
+#products .pro .description h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+#products .pro .description i {
+  font-size: 12px;
+  color: rgb(243, 181, 25);
+}
+#products .pro .description h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0aa014cc;
+}
+
+#products .pro .description .cart {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f6ea;
+  font-weight: 500;
+  color: #0aa014cc;
+  border: 1px solid #cce7d0;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  /* center the cart icon within the borders */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(./Images/banner6.png);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h4 {
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+#banner h2 {
+  color: yellow;
+  font-size: 32px;
+  padding: 10px 0;
+}
+
+#banner h2 span {
+  color: #00ff11cc;
+}
+
+#banner button:hover {
+  background-color: #0aa014cc;
+  color: #fff;
+}
+
+#sm-banner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#sm-banner .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url(./Images/camping\ model.png);
+  min-width: 580px;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+}
+#sm-banner .banner-box2 {
+  background-image: url(./Images/banner3\ flip.jpg);
+}
+
+#sm-banner h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#sm-banner h2 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+#sm-banner span {
+  color: yellow;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+#sm-banner .banner-box:hover button {
+  background-color: #0aa014cc;
+  border: 1px solid #0aa014cc;
+}
+
+#banner3 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
+#banner3 .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url(./Images/camping2.jpg);
+  min-width: 30%;
+  height: 30vh;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#banner3 .banner-box2 {
+  background-image: url(./Images/camping8.jpg);
+}
+
+#banner3 .banner-box3 {
+  background-image: url(./Images/camping6.jpg);
+}
+
+#banner3 h2 {
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+#banner3 h3 {
+  color: yellow;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+#newsletter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-image: url(./Images/banner1.jpg);
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-color: #041e42;
+}
+#newsletter h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+#newsletter h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #818ea0;
+}
+
+#newsletter h3 span {
+  color: yellow;
+}
+
+#newsletter .form {
+  display: flex;
+  width: 40%;
+}
+
+#newsletter input {
+  height: 3.125rem;
+  padding: 0 1.25em;
+  font-size: 14px;
+  /* width: 100%; */
+  flex: 1; /* have used flex property to take up remaining space */
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+  background-color: #00ff11cc;
+  color: #fff;
+  white-space: nowrap;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#newsletter button:hover {
+  background-color: yellow;
+  color: #000;
+}
+
+footer {
+  display: flex;
+  background-color: rgb(229, 248, 188);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+footer .logo {
+  margin-bottom: 30px;
+}
+
+footer h4 {
+  font-size: 14px;
+  padding-bottom: 7px;
+}
+
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 10px;
+  margin: 0 0 8px 0;
+}
+
+footer .follow {
+  margin-top: 20px;
+}
+
+footer .follow i {
+  color: #465b52;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+/* footer .install img {
+    margin: 10px 0 15px 0;
+} */
+
+footer .follow i:hover,
+footer a:hover {
+  color: #0aa014cc;
+}
+
+footer .copyrights {
+  width: 100%;
+  text-align: center;
+}
+
+/* Camping Equipment Page */
+#page-header {
+  background-image: url(./Images/camping10.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 14px;
+}
+
+#page-header h2 {
+  color: #0ce91acc;
+}
+#page-header p {
+  color: yellow;
+  font-weight: 600;
+}
+
+#pagenavigate {
+  text-align: center;
+}
+
+#pagenavigate a {
+  text-decoration: none;
+  background-color: #0aa014cc;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+#pagenavigate a:hover {
+  background-color: yellow;
+  color: #000;
+}
+
+/* Single Product Page */
+
+#product-details {
+  display: flex;
+  margin-top: 20px;
+}
+
+#product-details .single-pro-image {
+  width: 40%;
+  margin-right: 50px;
+}
+
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#product-details .single-pro-details {
+  width: 50%;
+  padding-top: 30px;
+}
+
+#product-details .single-pro-details h4 {
+  padding: 40px 0 20px 0;
+}
+
+#product-details .single-pro-details h2 {
+  font-size: 26px;
+}
+
+#product-details .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#product-details .single-pro-details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+#product-details .single-pro-details input:focus {
+  outline: none;
+}
+
+#product-details .single-pro-details button {
+  background: #0aa014cc;
+  color: #fff;
+}
+
+#product-details .single-pro-details button:hover {
+  background: yellow;
+  color: #000;
+}
+
+#product-details .single-pro-details span {
+  line-height: 25px;
+}
+
+/* shopping cart / basket */
+#page-header .basket-cart {
+  background-image: url(./Images/cart.jpg);
+}
+
+#cart {
+  overflow-x: auto;
+}
+
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img {
+  width: 70px;
+}
+
+#cart table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+#cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(3) {
+  width: 350px;
+  text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+  border: 1px solid #0aa014cc;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+#cart table tbody tr td {
+  padding-top: 15px;
+}
+
+#cart table tbody td {
+  font-size: 13px;
+}
+
+#cart-add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#voucher {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#voucher h3,
+#subtotal h3 {
+  padding-bottom: 15px;
+}
+
+#voucher input {
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #0aa014cc;
+}
+
+#voucher button,
+#subtotal button {
+  background-color: #0aa014cc;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+#voucher button:hover,
+#subtotal button:hover {
+  background-color: yellow;
+  color: #000;
+}
+
+#subtotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #0aa014cc;
+  padding: 30px;
+}
+
+#subtotal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#subtotal table td {
+  width: 50%;
+  border: 1px solid #0aa014cc;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* Start of Media Query */
+
+@media (max-width: 799px) {
+  /* optimized for tablet view */
+  .section-p1 {
+    padding: 40px 40px;
+  }
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #292929;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.02);
+    padding: 80px 0 0 10px;
+    transition: 0.3s;
+  }
+
+  #navbar.active {
+    right: 0px;
+  }
+
+  #navbar li {
+    margin-bottom: 25px;
+  }
+
+  #mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  #mobile i {
+    color: #00ff11cc;
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  #close {
+    display: initial;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #00ff11cc;
+    font-size: 24px;
+  }
+  #lg-bag {
+    display: none;
+  }
+
+  #hero {
+    height: 70vh;
+    padding: 0 80px;
+    background-position: top 30% right 30%;
+  }
+
+  #features {
+    justify-content: center;
+  }
+
+  #features .fe-box {
+    margin: 15px 15px;
+  }
+
+  #products .pro-container {
+    justify-content: center;
+  }
+
+  #products .pro {
+    margin: 15px;
+  }
+
+  #banner {
+    height: 25vh;
+  }
+
+  #sm-banner .banner-box {
+    min-width: 100%;
+    height: 30vh;
+  }
+
+  #sm-banner .banner-box2 {
+    margin-top: 20px;
+  }
+
+  #banner3 {
+    padding: 0 40px;
+  }
+
+  #banner3 .banner-box {
+    width: 28%;
+  }
+
+  #newsletter .form {
+    margin-top: 10px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 477px) {
+  /* optimized for mobile view */
+
+  .section-p1 {
+    padding: 20px;
+  }
+
+  #header {
+    padding: 1px 10px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+  h1 {
+    font-size: 38px;
+  }
+
+  #hero {
+    padding: 0 20px;
+    background-position: 55%;
+  }
+
+  #features {
+    justify-content: space-between;
+  }
+
+  #features .fe-box {
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+
+  #products .pro {
+    width: 100%;
+  }
+
+  #banner {
+    height: 40vh;
+  }
+
+  #sm-banner .banner-box {
+    height: 40vh;
+  }
+
+  #sm-banner .banner-box2 {
+    margin-top: 20px;
+  }
+
+  #banner3 {
+    padding: 0 20px;
+  }
+
+  #banner3 .banner-box {
+    width: 100%;
+  }
+
+  #newsletter {
+    padding: 40px 20px;
+  }
+
+  #newsletter .form {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  footer .copyrights {
+    text-align: start;
+  }
+
+  /* Single Product */
+  #product-details {
+    display: flex;
+    flex-direction: column;
+  }
+  #product-details .single-pro-image {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  #product-details .single-pro-details {
+    width: 100%;
+  }
+
+  /* Cart page */
+  #cart-add {
+    flex-direction: column;
+  }
+
+  #voucher {
+    width: 100%;
+  }
+
+  #subtotal {
+    width: 100%;
+    padding: 20px;
+  }
+}
