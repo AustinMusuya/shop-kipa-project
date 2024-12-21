@@ -26,21 +26,26 @@
           <ul id="navbar">
             <li><a href="#" class="active">Home Page</a></li>
             <li><a href="#">Items</a></li>
-            {% comment %} <li><a href="#">Furniture</a></li> {% endcomment %}
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logged in as {{ user }}</a>
+            </li>
+            <li>
+              <form class="logoutform" method="post" action="{% url 'logout' %}" >
+                {% csrf_token %}
+                <button type="submit" class="nav-link" style="background: none; border: none; color: blue; cursor: pointer;">
+                    Logout
+                  </button>
+              </form>
+            </li>
+            {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
-            {% comment %} <li id="lg-bag">
-              <a href="./html pages/basket.html"
-                ><img src="./online-shopping (2).png" alt="shopping basket"
-              /></a>
-            </li> {% endcomment %}
+            {% endif %}
+            {% comment %} <li><a href="{% url 'register' %}">Register</a></li> {% endcomment %}
             <a href="#" id="close"><i class="fa fa-times"></i></a>
           </ul>
         </nav>
         <div id="mobile">
-          {% comment %} <a href="./html pages/basket.html"
-            ><img src="./online-shopping (2).png" alt="shopping basket"
-          /></a> {% endcomment %}
           <i id="bar" class="fa fa-outdent"></i>
         </div>
       </header>
