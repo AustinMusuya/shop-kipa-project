@@ -2,9 +2,11 @@
 {% block title %}Login{% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form method='post'>
-{% csrf_token %}{{form | crispy}}
-<p>Don't have an account? Create one <a href="{% url 'register' %}">here</a></p>
-<button type="submit" class="normal">Login</button>
-</form>
+<section class="section-p1 section-m1 form-style">
+    <form method='post'>
+        {% csrf_token %}{{form | crispy}}
+        <p>Don't have an account? Create one <a href="{% url 'register' %}">here</a></p>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</section>
 {% endblock  %}
