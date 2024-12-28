@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Category: {{ category.name }}</h1>
+<p>{{ category.description }}</p>
+
+<h2>Products in this Category</h2>
+{% if category.product_category.all %}
+    <ul>
+        {% for product in category.product_category.all %}
+            <li>
+                <strong>{{ product.name }}</strong><br>
+                Price: KES{{ product.price }}<br>
+                Quantity in Stock: {{ product.quantity_in_stock }}<br>
+                Reorder Level: {{ product.reorder_level }}<br>
+                <a href="{% url 'product-detail' product.id %}">View Product Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products found in this category.</p>
+{% endif %}
+
+{% if request.user.is_staff %}
+    <a href="{% url 'category-edit' category.id %}">Edit Category</a>
+    <a href="{% url 'category-delete' category.id %}">Delete Category</a>
+{% endif %}
+<a href="{% url 'category-list' %}">Back to Categories</a>
+{% endblock %}
