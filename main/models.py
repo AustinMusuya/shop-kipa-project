@@ -13,6 +13,9 @@ class Category(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 class Sales(models.Model):
     sale_date = models.DateTimeField(auto_now=True)
     total_amount = models.FloatField()
@@ -23,6 +26,9 @@ class Supplier(models.Model):
     contact_number =  models.CharField(validators=[phone_validator], max_length=15, blank=True, null=True)
     email = models.EmailField(max_length=254)
     address = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -36,6 +42,9 @@ class Product(models.Model):
     last_updated = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='product_category')
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, related_name="product_supplier")
+
+    def __str__(self):
+        return self.name
 
 class OrderDetail(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_order")
