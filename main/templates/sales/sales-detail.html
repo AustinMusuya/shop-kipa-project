@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+{% block content %}
+<h1>Sale Details</h1>
+<p>Date: {{ sale.sale_date }}</p>
+<p>Total Amount: {{ sale.total_amount }}</p>
+
+<h2>Items Sold</h2>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Selling Price</th>
+        <th>Total</th>
+    </tr>
+    {% for detail in sale_details %}
+    <tr>
+        <td>{{ detail.product.name }}</td>
+        <td>{{ detail.quantity_sold }}</td>
+        <td>{{ detail.selling_price }}</td>
+        <td>{{ detail.quantity_sold|multiply:detail.selling_price }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

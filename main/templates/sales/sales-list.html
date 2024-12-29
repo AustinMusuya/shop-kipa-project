@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block title %}Sales List{% endblock %}
+{% block content %}
+<h1>All Sales</h1>
+    <ul>
+        {% for sale in sales %}
+        <li>
+            <a href="{% url 'sales_detail' sale.pk %}">
+                Sale on {{ sale.sale_date }} - Total: {{ sale.total_amount }}
+            </a>
+        </li>
+        {% endfor %}
+        </ul>
+{% endblock %}
