@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .forms import RegisterForm
-from .models import Category
+from .models import Category, Product, Supplier, SaleDetail, Sales, OrderDetail
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
@@ -51,3 +51,65 @@ class CategoryDeleteView(AdminRequiredMixin, DeleteView):
     model = Category
     template_name = 'categories/category-confirm-delete.html'
     success_url = reverse_lazy('category-list')
+
+
+# Supplier Views
+class SupplierListView(LoginRequiredMixin, ListView):
+    model = Supplier
+    template_name = 'supplier_list.html'
+    context_object_name = 'suppliers'
+
+
+class SupplierDetailView(LoginRequiredMixin, DetailView):
+    model = Supplier
+    template_name = 'supplier_detail.html'
+    context_object_name = 'supplier'
+
+
+class SupplierCreateView(LoginRequiredMixin, AdminRequiredMixin, CreateView):
+    model = Supplier
+    fields = ['name', 'contact_number', 'email', 'address']
+    template_name = 'supplier_form.html'
+    success_url = reverse_lazy('supplier_list')
+
+
+class SupplierUpdateView(LoginRequiredMixin, AdminRequiredMixin, UpdateView):
+    model = Supplier
+    fields = ['name', 'contact_number', 'email', 'address']
+    template_name = 'supplier_form.html'
+    success_url = reverse_lazy('supplier_list')
+
+
+class SupplierDeleteView(LoginRequiredMixin, AdminRequiredMixin, DeleteView):
+    model = Supplier
+    template_name = 'supplier_confirm_delete.html'
+    success_url = reverse_lazy('supplier_list')
+
+
+# Product Views
+class ProductListView(LoginRequiredMixin, ListView):
+    model = Product
+    template_name = 'products/product-list.html'
+    context_object_name = 'products'
+
+class ProductDetailView(LoginRequiredMixin, DetailView):
+    model = Product
+    template_name = 'products/product-detail.html'
+    context_object_name = 'product'
+
+class ProductCreateView(AdminRequiredMixin, CreateView):
+    model = Product
+    template_name = 'products/product-form.html'
+    fields = ['name', 'price', 'quantity_in_stock', 'reorder_level', 'unit', 'description', 'category', 'supplier']
+    success_url = reverse_lazy('product-list')
+
+class ProductUpdateView(AdminRequiredMixin, UpdateView):
+    model = Product
+    template_name = 'products/product-form.html'
+    fields = ['name', 'price', 'quantity_in_stock', 'reorder_level', 'unit', 'description', 'category', 'supplier']
+    success_url = reverse_lazy('product-list')
+
+class ProductDeleteView(AdminRequiredMixin, DeleteView):
+    model = Product
+    template_name = 'products/product-confirm-delete.html'
+    success_url = reverse_lazy('product-list')
