@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% block title %}Order List{% endblock %}
+{% block content %}
+<section class="section-p1 section-m1">
+    <h2>Orders List</h2>
+    <a class="btn btn-primary" href="{% url 'order-add' %}">Add Order</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Supplier</th>
+                <th>Status</th>
+                <th>Total Amount</th>
+                <th>Order Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ order.supplier.name }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.total_amount }}</td>
+                    <td>{{ order.order_date }}</td>
+                    <td>
+                        {% if request.user.is_staff %}
+                        <a href="{% url 'order-edit' order.pk %}">Edit</a>
+                        <a href="{% url 'order-delete' order.pk %}">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
