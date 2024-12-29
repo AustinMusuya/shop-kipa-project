@@ -30,18 +30,17 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Logged in as {{ user }}</a>
             </li>
-            <li>
+            <li class="nav-item">
               <form class="logoutform" method="post" action="{% url 'logout' %}" >
                 {% csrf_token %}
-                <button type="submit" class="nav-link" style="background: none; border: none; color: blue; cursor: pointer;">
+                <button type="submit" class="nav-link button-nav" style="background: none; border: none; color: white; cursor: pointer;">
                     Logout
-                  </button>
+                </button>
               </form>
             </li>
             {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
             {% endif %}
-            {% comment %} <li><a href="{% url 'register' %}">Register</a></li> {% endcomment %}
             <a href="#" id="close"><i class="fa fa-times"></i></a>
           </ul>
         </nav>
@@ -50,6 +49,68 @@
         </div>
       </header>
       {% block content %}{% endblock %}
+      <footer class="section-p1">
+        <div class="column">
+          <img
+            src="{% static "main/images/shopkipalogo.png" %}"
+            class="logo"
+            alt="Shop-Kipa logo"
+            width="100" 
+            height="100" 
+          />
+          <h4>Contact Support</h4>
+          <p><strong>Email</strong> : info@systemsupport.com</p>
+          <p><strong>Phone</strong> : +254 724 966 576</p>
+          <p><strong>Hours</strong> : 08.00 - 17.00, Everyday</p>
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+              <i class="fa fa-facebook-f"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About Us</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+        </div>
+  
+        <div class="col">
+          <h4>My Account</h4>
+          <a href="#">Sign in</a>
+          <a href="#">View Cart</a>
+          <a href="#">My Wishlist</a>
+          <a href="#">Track My Order</a>
+          <a href="#">Help</a>
+        </div>
+  
+        <div class="col install">
+          <h4>Install</h4>
+          <p>From App Store or Google Play</p>
+          <div class="row">
+            <img src="./Images/appStore2 (1).png" alt="" />
+            <img src="./Images/googleplay3 (1) (1).png" alt="" />
+          </div>
+          <p>Secured Payment Gateways</p>
+          <img src="./Images/paymentGateways1 (1).png" alt="" />
+        </div>
+        <div class="copyrights">
+          <p>Copyright © <span id="date"></span> Shopkipa App- Inventory Management App</p>
+        </div>
+      </footer>
+      <script>
+        // code to make date dynamic in footer
+        let dateElement = document.getElementById("date");
+
+        const currentYear = new Date().getFullYear();
+        dateElement.textContent = `${currentYear}`; 
+      </script>
       <script src="{% static "main/scripts/script.js" %}"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
