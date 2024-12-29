@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block title %}Product Detail{% endblock %}
+{% block content %}
+<h1>Product: {{ product.name }}</h1>
+<p><strong>Price:</strong> KES{{ product.price }}</p>
+<p><strong>Quantity in Stock:</strong> {{ product.quantity_in_stock }}</p>
+<p><strong>Reorder Level:</strong> {{ product.reorder_level }}</p>
+<p><strong>Unit:</strong> {{ product.unit }}</p>
+<p><strong>Description:</strong> {{ product.description }}</p>
+<p><strong>Category:</strong> <a href="{% url 'category-detail' product.category.id %}">{{ product.category.name }}</a></p>
+<p><strong>Supplier:</strong> {{ product.supplier.name }}</p>
+
+{% if request.user.is_staff %}
+    <a href="{% url 'product-edit' product.id %}">Edit Product</a>
+    <a href="{% url 'product-delete' product.id %}">Delete Product</a>
+{% endif %}
+<a href="{% url 'product-list' %}">Back to Products</a>
+{% endblock %}

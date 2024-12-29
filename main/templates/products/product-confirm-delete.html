@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block title %}Product Confirm Delete{% endblock %}
+{% block content %}
+<section class="section-p1 section-m1 form-style">
+    <h2>Are you sure you want to delete "{{ object.name }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class='btn btn-danger'>Yes, delete</button>
+        <a href="{% url 'product-list' %}">Cancel</a>
+    </form>
+</section>
+{% endblock %}
