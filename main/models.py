@@ -20,6 +20,9 @@ class Sales(models.Model):
     sale_date = models.DateTimeField(auto_now=True)
     total_amount = models.FloatField()
 
+    def __str__(self):
+        return f"Sale on {self.sale_date} - Total: {self.total_amount}"
+
 
 class Supplier(models.Model):
     name = models.CharField(max_length=150)
@@ -30,6 +33,11 @@ class Supplier(models.Model):
     def __str__(self):
         return self.name
 
+class Orders(models.Model):
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, related_name='supplier_order')
+    order_date = models.DateField(auto_now=True)
+    total_amount = models.FloatField()
+    status = models.CharField(max_length=150)
 
 class Product(models.Model):
     name = models.CharField(max_length=150)
@@ -50,6 +58,7 @@ class OrderDetail(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_order")
     quantity_ordered = models.PositiveIntegerField()
     unit_price = models.FloatField()
+    orders = models.ForeignKey(Orders, on_delete=models.CASCADE, related_name='details')
 
 
 class SaleDetail(models.Model):
@@ -57,3 +66,6 @@ class SaleDetail(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_sale")
     quantity_sold = models.PositiveIntegerField()
     selling_price = models.FloatField()
+
+    def __str__(self):
+        return f"{self.product.name} - Quantity: {self.quantity_sold} - Price: {self.selling_price}"
