@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% block title %}Supplier List{% endblock %}
+{% block content %}
+<h1>Supplier List</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Contact Number</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    {% for supplier in suppliers %}
+    <tr>
+        <td>{{ supplier.name }}</td>
+        <td>{{ supplier.contact_number }}</td>
+        <td>{{ supplier.email }}</td>
+        <td>
+            <a href="{% url 'supplier_detail' supplier.id %}">View Details</a>
+            {% if request.user.is_staff %}
+            <a href="{% url 'supplier-edit' supplier.id %}">Edit</a>
+            <a href="{% url 'supplier-delete' supplier.id %}">Delete</a>
+        {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% if request.user.is_staff %}
+    <a href="{% url 'supplier-add' %}">Add New Supplier</a>
+{% endif %}
+{% endblock %}
