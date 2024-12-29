@@ -113,3 +113,36 @@ class ProductDeleteView(AdminRequiredMixin, DeleteView):
     model = Product
     template_name = 'products/product-confirm-delete.html'
     success_url = reverse_lazy('product-list')
+
+
+# Sales views
+class SalesListView(LoginRequiredMixin, ListView):
+    model = Sales
+    template_name = 'sales_list.html'
+    context_object_name = 'sales'
+
+
+class SalesDetailView(LoginRequiredMixin, DetailView):
+    model = Sales
+    template_name = 'sales_detail.html'
+    context_object_name = 'sale'
+
+
+class SalesCreateView(LoginRequiredMixin, AdminRequiredMixin, CreateView):
+    model = Sales
+    fields = ['sale_date', 'total_amount']
+    template_name = 'sales_form.html'
+    success_url = reverse_lazy('sales_list')
+
+
+class SalesUpdateView(LoginRequiredMixin, AdminRequiredMixin, UpdateView):
+    model = Sales
+    fields = ['sale_date', 'total_amount']
+    template_name = 'sales_form.html'
+    success_url = reverse_lazy('sales_list')
+
+
+class SalesDeleteView(LoginRequiredMixin, AdminRequiredMixin, DeleteView):
+    model = Sales
+    template_name = 'sales_confirm_delete.html'
+    success_url = reverse_lazy('sales_list')
