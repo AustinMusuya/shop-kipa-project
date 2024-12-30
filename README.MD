@@ -39,9 +39,9 @@
 
 Clone the repository to your local machine:
 
-```bash
-git clone https://github.com/AustinMusuya/shop-kipa-project.git
-cd shop-kipa-project
+bash
+    git clone https://github.com/AustinMusuya/shop-kipa-project.git
+    cd shop-kipa-project
 
 
 
@@ -101,7 +101,7 @@ bash
 
 The app will be available at http://127.0.0.1:8000/.
 
-** How to Use **
+**How to Use**
 
 Admin Features
 Log in to the admin panel at http://127.0.0.1:8000/admin/ using the superuser credentials.
@@ -119,7 +119,7 @@ Supplier information
 Sales history
 Admins can grant additional permissions via the admin panel.
 
-** Testing **
+**Testing**
 To ensure the app is functioning correctly:
 
 Navigate to various sections (products, suppliers, sales) via the admin panel or frontend views.
@@ -134,7 +134,7 @@ Fork the repository.
 Create a new feature branch.
 Submit a pull request.
 
-** License **
+**License**
 
 This project is licensed under the MIT License.
 
