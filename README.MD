@@ -44,7 +44,10 @@ Create and activate a virtual environment:
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate   # On Windows use: venv\Scriptsctivate
+source venv/bin/activate   
+
+# On Windows use: 
+venv/Scripts/ctivate
 ```
 
 ### 3. Install Dependencies
