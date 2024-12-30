@@ -24,9 +24,10 @@
         /></a>
         <nav>
           <ul id="navbar">
-            <li><a href="#" class="active">Home Page</a></li>
-            <li><a href="#">Items</a></li>
+            <li><a href="{% url 'home' %}" class="active">Home Page</a></li>
             {% if user.is_authenticated %}
+            <li><a href="{% url 'product-list' %}">Products</a></li>
+            <li><a href="{% url 'category-list' %}">Categories</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#">Logged in as {{ user }}</a>
             </li>
@@ -94,11 +95,11 @@
           <h4>Install</h4>
           <p>From App Store or Google Play</p>
           <div class="row">
-            <img src="./Images/appStore2 (1).png" alt="" />
-            <img src="./Images/googleplay3 (1) (1).png" alt="" />
+            <img src="{% static "main/images/appStore2 (1).png" %}" alt="" />
+            <img src="{% static "main/images/googleplay3 (1) (1).png" %}" alt="" />
           </div>
           <p>Secured Payment Gateways</p>
-          <img src="./Images/paymentGateways1 (1).png" alt="" />
+          <img src="{% static "main/images/paymentGateways1 (1).png" %}" alt="" />
         </div>
         <div class="copyrights">
           <p>Copyright © <span id="date"></span> Shopkipa App- Inventory Management App</p>

@@ -1,5 +1,37 @@
 {% extends "main/base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+{% load static %}
+<main>
+    <section id="hero">
+        <article>
+          <header>
+            <h4>Efficient Inventory Solutions</h4>
+            <h2>Streamline Your Stock Management</h2>
+            <h1>Track and Optimize Effortlessly</h1>
+          </header>
+          <p>Save time and reduce costs with real-time tracking and smart analytics.</p>
+          <button class="btn btn-primary">Get Started</button>
+        </article>
+      </section>
 
+      <section id="features" class="section-p1">
+        <div class="fe-box">
+            <img src="{% static "main/images/Big_phone_with_cart-removebg-preview.png"%}" alt="" />
+          <h6>Smart Orders</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{% static "main/images/money.jpg"%}" alt="" />
+          <h6>Cost Efficiency</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{% static "main/images/OE7IMX0 (1).jpg"%}" alt="" />
+          <h6>24/7 support</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{% static "main/images/Big_phone_with_cart-removebg-preview.png"%}" alt="" />
+          <h6>Tracking</h6>
+        </div>
+      </section>
+</main>
 {% endblock %}

@@ -11,7 +11,7 @@ from django.forms import inlineformset_factory
 # Create your views here.
 
 class HomeView(TemplateView):
-    template_name = 'main/base.html'
+    template_name = 'main/home.html'
 
 class SignUpView(CreateView):
     form_class = RegisterForm
