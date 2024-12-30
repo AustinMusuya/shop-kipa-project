@@ -35,31 +35,37 @@
 
 ## Setup Instructions
 
-### 1. Clone the Repository
+1. **Clone the Repository**
 
 Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/AustinMusuya/shop-kipa-project.git
 cd shop-kipa-project
-2. Create a Virtual Environment
+
+
+
+2. **Create a Virtual Environment**
+
 Create and activate a virtual environment:
 
 bash
-Copy code
-python3 -m venv venv
-source venv/bin/activate   # On Windows use: venv\Scripts\activate
-3. Install Dependencies
+    python3 -m venv venv
+    source venv/bin/activate   # On Windows use: venv\Scripts\activate
+
+3. **Install Dependencies**
+
 Install the required Python packages:
 
 bash
-Copy code
-pip install -r requirements.txt
-4. Configure the Database
-Set up your MySQL database (or SQLite for development) and update the database configuration in shop_kipa_project/settings.py:
+    pip install -r requirements.txt
 
-python
-Copy code
+4. **Configure the Database**
+
+Set up your MySQL database (or SQLite for development) and update the database configuration in 
+
+shop_kipa_project/settings.py:
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -70,29 +76,36 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-5. Apply Migrations
+
+
+5. **Apply Migrations**
+
 Run the migrations to set up the database schema:
 
 bash
-Copy code
-python manage.py migrate
-6. Create a Superuser (Admin)
+    python manage.py migrate
+
+6. **Create a Superuser (Admin)**
+
 Create a superuser to manage the app via Django admin:
 
 bash
-Copy code
-python manage.py createsuperuser
-7. Run the Development Server
+    python manage.py createsuperuser
+
+7. **Run the Development Server**
+
 Start the Django development server to test the app:
 
 bash
-Copy code
-python manage.py runserver
+    python manage.py runserver
+
 The app will be available at http://127.0.0.1:8000/.
 
-How to Use
+** How to Use **
+
 Admin Features
 Log in to the admin panel at http://127.0.0.1:8000/admin/ using the superuser credentials.
+
 Manage:
 Users: Add, edit, and assign roles.
 Products: Add new inventory items, update stock levels, and set reorder points.
@@ -106,18 +119,23 @@ Supplier information
 Sales history
 Admins can grant additional permissions via the admin panel.
 
-Testing
+** Testing **
 To ensure the app is functioning correctly:
 
-Navigate to various sections (inventory, suppliers, sales) via the admin panel or frontend views.
+Navigate to various sections (products, suppliers, sales) via the admin panel or frontend views.
+
 Test user roles by logging in with accounts that have different permission levels.
-Contributing
-If you'd like to contribute to Shop-Kipa:
+
+**Contributing**
+
+If you'd like to contribute to Shop-Kipa-
 
 Fork the repository.
 Create a new feature branch.
 Submit a pull request.
-License
+
+** License **
+
 This project is licensed under the MIT License.
 
 For any issues or feedback, feel free to reach out!
