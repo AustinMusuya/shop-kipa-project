@@ -126,7 +126,7 @@ p {
 
 /* Home page styling */
 #hero {
-  background-image: url("./Images/camping3.jpg");
+  background-image: url("shop_kipa_project/main/static/main/images/8487305.jpg");
   height: 110vh;
   width: 100%;
   background-size: cover;
@@ -150,8 +150,6 @@ p {
 }
 
 #hero button {
-  background-image: url("./Images/wooden\ button.png");
-  color: #000;
   border: 0;
   padding: 14px 80px 14px 65px;
   background-repeat: no-repeat;
