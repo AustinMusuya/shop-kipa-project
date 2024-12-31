@@ -35,7 +35,7 @@ urlpatterns = [
     # Paths to Sales URLs
     path('sales/', views.SalesListView.as_view(), name='sales-list'),
     path('sales/<int:pk>/', views.SalesDetailView.as_view(), name='sales-detail'),
-    path('sales/add/', views.SalesCreateView.as_view(), name='sales-create'),
+    path('sales/add/', views.SalesCreateView.as_view(), name='sales-add'),
     path('sales/<int:pk>/edit/', views.SalesUpdateView.as_view(), name='sales-edit'),
     path('sales/<int:pk>/delete/', views.SalesDeleteView.as_view(), name='sales-delete'),
 
