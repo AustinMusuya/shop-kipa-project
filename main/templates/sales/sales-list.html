@@ -12,6 +12,9 @@
         </a>
         {% endfor %}
     </div>
+    {% if request.user.is_staff %}
+        <a href="{% url 'sales-add' %}" class="btn btn-success btn-sm">Add New Sale</a>
+    {% endif %} 
     
 </section>
 {% endblock %}
