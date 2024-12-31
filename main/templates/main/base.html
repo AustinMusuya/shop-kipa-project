@@ -28,6 +28,9 @@
             {% if user.is_authenticated %}
             <li><a href="{% url 'product-list' %}">Products</a></li>
             <li><a href="{% url 'category-list' %}">Categories</a></li>
+            <li><a href="{% url 'sales-list' %}">Sales</a></li>
+            <li><a href="{% url 'orders-list' %}">Orders</a></li>
+            <li><a href="{% url 'supplier-list' %}">Suppliers</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#">Logged in as {{ user }}</a>
             </li>
