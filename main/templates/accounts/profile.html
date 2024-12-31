@@ -3,18 +3,44 @@
 {% block content %}
 {% load static %}
 <main>
-    <section id="hero">
-        <article>
-          <header>
-            <h4>Efficient Inventory Solutions</h4>
-            <h2>Streamline Your Stock Management</h2>
-            <h1>Track and Optimize Effortlessly</h1>
-          </header>
-          <p>Save time and reduce costs with real-time tracking and smart analytics.</p>
-          <button class="btn btn-primary">Get Started</button>
-        </article>
-      </section>
-
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static "main/images/time.jpg"%}" class="d-block w-100" alt="..." style="max-width: 100%; height: auto; display: block;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Efficient Inventory Solutions</h5>
+          <p>Save time</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static "main/images/tracking.jpg"%}" class="d-block w-100" alt="..." style="max-width: 100%; height: auto; display: block;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Track and Optimize Effortlessly</h5>
+          <p>Real-time tracking and smart analytics.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static "main/images/manage.jpg"%}" class="d-block w-100" alt="..." style="max-width: 100%; height: auto; display: block;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Streamline Your Stock Management</h5>
+          <p>Reduce Costs</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
       <section id="features" class="section-p1">
         <div class="fe-box">
             <img src="{% static "main/images/Big_phone_with_cart-removebg-preview.png"%}" alt="" />
