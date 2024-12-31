@@ -14,8 +14,8 @@
     </div>
     
     <div class="d-flex justify-content-between align-items-center">
-        <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-warning btn-sm">Edit Supplier</a>
-        <a href="{% url 'supplier_list' %}" class="btn btn-primary btn-sm">Back to Supplier List</a>
+        <a href="{% url 'supplier-edit' supplier.id %}" class="btn btn-warning btn-sm">Edit Supplier</a>
+        <a href="{% url 'supplier-list' %}" class="btn btn-primary btn-sm">Back to Supplier List</a>
     </div>    
 </section>
 {% endblock %}
