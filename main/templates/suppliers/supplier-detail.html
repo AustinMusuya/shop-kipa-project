@@ -1,10 +1,21 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<h1>Supplier Details</h1>
-<p><strong>Name:</strong> {{ supplier.name }}</p>
-<p><strong>Contact Number:</strong> {{ supplier.contact_number }}</p>
-<p><strong>Email:</strong> {{ supplier.email }}</p>
-<p><strong>Address:</strong> {{ supplier.address }}</p>
-<a href="{% url 'supplier_update' supplier.id %}">Edit</a> |
-<a href="{% url 'supplier_list' %}">Back to List</a>
+<section class="section-p1 section-m1 form-style">
+    <h1 class="mb-4">Supplier Details</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Supplier Information</h5>
+            <p><strong>Name:</strong> {{ supplier.name }}</p>
+            <p><strong>Contact Number:</strong> {{ supplier.contact_number }}</p>
+            <p><strong>Email:</strong> {{ supplier.email }}</p>
+            <p><strong>Address:</strong> {{ supplier.address }}</p>
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-warning btn-sm">Edit Supplier</a>
+        <a href="{% url 'supplier_list' %}" class="btn btn-primary btn-sm">Back to Supplier List</a>
+    </div>    
+</section>
 {% endblock %}

@@ -2,36 +2,42 @@
 {% block title %}Order List{% endblock %}
 {% block content %}
 <section class="section-p1 section-m1">
-    <h2>Orders List</h2>
-    <a class="btn btn-primary" href="{% url 'order-add' %}">Add Order</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Supplier</th>
-                <th>Status</th>
-                <th>Total Amount</th>
-                <th>Order Date</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for order in orders %}
+    <h2 class="mb-4">Orders List</h2>
+
+    <!-- Add Order Button -->
+    <a class="btn btn-primary mb-4" href="{% url 'order-add' %}">Add Order</a>
+    
+    <!-- Orders Table -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-light">
                 <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ order.supplier.name }}</td>
-                    <td>{{ order.status }}</td>
-                    <td>{{ order.total_amount }}</td>
-                    <td>{{ order.order_date }}</td>
-                    <td>
-                        {% if request.user.is_staff %}
-                        <a href="{% url 'order-edit' order.pk %}">Edit</a>
-                        <a href="{% url 'order-delete' order.pk %}">Delete</a>
-                        {% endif %}
-                    </td>
+                    <th>#</th>
+                    <th>Supplier</th>
+                    <th>Status</th>
+                    <th>Total Amount (KES)</th>
+                    <th>Order Date</th>
+                    <th>Actions</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ order.supplier.name }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>KES {{ order.total_amount }}</td>
+                        <td>{{ order.order_date }}</td>
+                        <td>
+                            {% if request.user.is_staff %}
+                            <a href="{% url 'order-edit' order.pk %}" class="btn btn-warning btn-sm me-2">Edit</a>
+                            <a href="{% url 'order-delete' order.pk %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this order?');">Delete</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>   
 </section>
 {% endblock %}

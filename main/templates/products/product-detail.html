@@ -1,18 +1,32 @@
 {% extends 'main/base.html' %}
 {% block title %}Product Detail{% endblock %}
 {% block content %}
-<h1>Product: {{ product.name }}</h1>
-<p><strong>Price:</strong> KES{{ product.price }}</p>
-<p><strong>Quantity in Stock:</strong> {{ product.quantity_in_stock }}</p>
-<p><strong>Reorder Level:</strong> {{ product.reorder_level }}</p>
-<p><strong>Unit:</strong> {{ product.unit }}</p>
-<p><strong>Description:</strong> {{ product.description }}</p>
-<p><strong>Category:</strong> <a href="{% url 'category-detail' product.category.id %}">{{ product.category.name }}</a></p>
-<p><strong>Supplier:</strong> {{ product.supplier.name }}</p>
+<section class="section-p1 section-m1 form-style">
+    <h1 class="mb-4">{{ product.name }}</h1>
 
-{% if request.user.is_staff %}
-    <a href="{% url 'product-edit' product.id %}">Edit Product</a>
-    <a href="{% url 'product-delete' product.id %}">Delete Product</a>
-{% endif %}
-<a href="{% url 'product-list' %}">Back to Products</a>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Product Details</h5>
+            <p><strong>Price:</strong> KES {{ product.price }}</p>
+            <p><strong>Quantity in Stock:</strong> {{ product.quantity_in_stock }}</p>
+            <p><strong>Reorder Level:</strong> {{ product.reorder_level }}</p>
+            <p><strong>Unit:</strong> {{ product.unit }}</p>
+            <p><strong>Description:</strong> {{ product.description }}</p>
+            <p><strong>Category:</strong> 
+                <a href="{% url 'category-detail' product.category.id %}" class="btn btn-link">{{ product.category.name }}</a>
+            </p>
+            <p><strong>Supplier:</strong> {{ product.supplier.name }}</p>
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-between align-items-center">
+        {% if request.user.is_staff %}
+            <div class="btn-group" role="group">
+                <a href="{% url 'product-edit' product.id %}" class="btn btn-warning btn-sm">Edit Product</a>
+                <a href="{% url 'product-delete' product.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this product?');">Delete Product</a>
+            </div>
+        {% endif %}
+        <a href="{% url 'product-list' %}" class="btn btn-primary btn-sm">Back to Products</a>
+    </div>   
+</section>
 {% endblock %}
