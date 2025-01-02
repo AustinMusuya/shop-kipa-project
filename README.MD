@@ -33,6 +33,8 @@
 
 Clone the repository to your local machine:
 
+Terminal
+
 ```bash
 git clone https://github.com/AustinMusuya/shop-kipa-project.git
 cd shop-kipa-project
@@ -42,11 +44,15 @@ cd shop-kipa-project
 
 Create and activate a virtual environment:
 
+Terminal
+
 ```bash
+# On Mac or Linux use: 
 python3 -m venv venv
 source venv/bin/activate   
 
 # On Windows use: 
+python -m venv venv
 venv/Scripts/activate
 ```
 
@@ -54,13 +60,19 @@ venv/Scripts/activate
 
 Install the required Python packages:
 
+Terminal
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Configure the Database
 
-Set up your MySQL database (or SQLite for development) and update the database configuration in `shop_kipa_project/settings.py`:
+Set up your MySQL database or SQLite for development and update the database configuration in 
+`shop_kipa_project/settings.py`:
+
+
+For MySQL Database settings:
 
 ```python
 DATABASES = {
@@ -74,10 +86,24 @@ DATABASES = {
     }
 }
 ```
+OR
+
+For SQLite Database settings:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
 
 ### 5. Apply Migrations
 
 Run the migrations to set up the database schema:
+
+Terminal
 
 ```bash
 python manage.py migrate
@@ -87,6 +113,8 @@ python manage.py migrate
 
 Create a superuser to manage the app via Django admin:
 
+Terminal
+
 ```bash
 python manage.py createsuperuser
 ```
@@ -94,6 +122,8 @@ python manage.py createsuperuser
 ### 7. Run the Development Server
 
 Start the Django development server to test the app:
+
+Terminal
 
 ```bash
 python manage.py runserver
