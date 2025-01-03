@@ -25,6 +25,7 @@
 
 - **Python 3.8+**: Ensure Python 3.8 or higher is installed.
 - **MySQL (For production)**: MySQL is required for production deployment. SQLite can be used for local development.
+- **Git**: Recommended for version control. (You can install from the official git website)
 - **Virtual Environment**: Recommended to isolate dependencies.
 
 ## Setup Instructions
