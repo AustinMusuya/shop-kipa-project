@@ -68,7 +68,9 @@ Terminal
 # On Mac or Linux use: 
 python3 -m venv venv
 source venv/bin/activate   
+```
 
+```bash
 # On Windows use: 
 python -m venv venv
 venv/Scripts/activate
@@ -122,6 +124,10 @@ DATABASES = {
 Run the migrations to set up the database schema:
 
 Terminal
+
+```bash
+python manage.py makemigrations
+```
 
 ```bash
 python manage.py migrate
