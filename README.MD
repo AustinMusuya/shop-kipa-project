@@ -64,14 +64,14 @@ Create and activate a virtual environment:
 
 Terminal
 
+On Mac or Linux use: 
 ```bash
-# On Mac or Linux use: 
 python3 -m venv venv
 source venv/bin/activate   
 ```
 
+On Windows use: 
 ```bash
-# On Windows use: 
 python -m venv venv
 venv/Scripts/activate
 ```
