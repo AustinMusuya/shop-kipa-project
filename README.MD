@@ -32,12 +32,29 @@
 
 ### 1. Clone the Repository
 
-Clone the repository to your local machine:
+What does this mean?
+You’re copying the project from an online location (GitHub) to your computer so you can work on it.
+
+Open the Terminal (on Mac/Linux) or Command Prompt (on Windows).
+
+On Mac, press Command + Space, type Terminal, and hit Enter.
+
+On Windows, press the Windows key, type cmd, and hit Enter.
+
+Type or copy-paste the following commands:
 
 Terminal
 
 ```bash
 git clone https://github.com/AustinMusuya/shop-kipa-project.git
+```
+Press Enter. This will download the project into a folder called shop-kipa-project.
+
+Navigate to the project folder by typing:
+
+Terminal
+
+```bash
 cd shop-kipa-project
 ```
 
