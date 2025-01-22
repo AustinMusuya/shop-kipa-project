@@ -1,4 +1,4 @@
-# 1. Createa a base Image
+# 1. Create a base Image
 
 FROM python:3.12
 
