@@ -24,7 +24,7 @@ EXPOSE 8000
 
 # 7. Copy setup script to workdir
 
-COPY setup.sh /shop-kipa-app/start.sh
+COPY setup.sh /shop-kipa-app/
 
 # 8. Make script executable
 
@@ -32,4 +32,4 @@ RUN chmod +x /shop-kipa-app/setup.sh
 
 # 9. Use the script to handle migrations and run the server
 
-CMD ["/setup.sh"]
+CMD ["./setup.sh"]
