@@ -28,8 +28,8 @@ COPY setup.sh /shop-kipa-app/
 
 # 8. Make script executable
 
-RUN chmod +x /shop-kipa-app/setup.sh
+# RUN chmod +x /shop-kipa-app/setup.sh
 
 # 9. Use the script to handle migrations and run the server
 
-CMD ["./setup.sh"]
+CMD [" python", "manage.py", "runserver", "0.0.0.0:8000"]
