@@ -122,14 +122,14 @@ docker compose exec web python manage.py createsuperuser
 
 ### **Method 2 — Local Python Virtual Environment**
 
-1. **Clone the repository**
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/AustinMusuya/shop-kipa-project.git
 cd shop-kipa-project
 ```
 
-2. **Create a virtual environment**
+**2. Create a virtual environment**
 
 - On MacOS/Linux:
 
@@ -145,13 +145,21 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-3. **Install dependencies**
+**3. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Configure the database**
+**4. Configure the database**
+
+**_a) Change to settings.py file in root project directory_**
+
+```bash
+cd shop_kipa_project/settings.py
+```
+
+**_b) At the ' DATABASES ' object configure:_**
 
 - For MySQL:
 
@@ -168,7 +176,11 @@ DATABASES = {
 }
 ```
 
-- For SQLite (development):
+(PS: You should have MySQL installed for this to work 😅)
+
+---
+
+- Or for SQLite (development):
 
 ```python
 DATABASES = {
@@ -179,20 +191,22 @@ DATABASES = {
 }
 ```
 
-5. **Apply migrations**
+---
+
+**5. Apply migrations**
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-6. **Create a superuser**
+**6. Create a superuser**
 
 ```bash
 python manage.py createsuperuser
 ```
 
-7. **Run the development server**
+**7. Run the development server**
 
 ```bash
 python manage.py runserver
