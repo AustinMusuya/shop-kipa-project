@@ -30,7 +30,6 @@
 - **Python 3.8+** (if using local venv)
 - **Docker & Docker Compose** (if using containerized setup)
 - **Git**
-- **Virtual Environment** (optional if running with Docker)
 
 ---
 
@@ -40,16 +39,16 @@ You can choose **one of two methods** to run Shop-Kipa:
 
 ---
 
-### **Method 1 MacOS/Linux — Docker Compose (Recommended )**
+### **Method 1 [MacOS/Linux] — Docker Compose (Recommended )**
 
-1. **Clone the repository**
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/AustinMusuya/shop-kipa-project.git
 cd shop-kipa-project
 ```
 
-2. **Create **``** file**
+**2. Create **``** file**
 
 Copy the example and set your credentials:
 
@@ -67,25 +66,33 @@ DB_HOST=db
 DB_PORT=5432
 ```
 
-3. **Build and start containers**
+**3. Build and start containers**
 
 **_a) Start Db container first_**
 
 ```bash
-docker compose up  -d db
+docker compose up -d db
 ```
 
 **_b) Start web container next_**
 
 ```bash
-docker compose up  -d web
+docker compose up -d web
 ```
 
 - This starts two containers:
   - **db**: PostgreSQL
   - **web**: Django app
 
-4. **Apply migrations**
+(Be patient, it may take a while for containers to be spin up😄)
+
+**_c) Check docker containers are running_**
+
+```bash
+docker ps
+```
+
+**4. Apply migrations**
 
 **_Run on a new terminal session_**
 
@@ -95,13 +102,13 @@ docker compose exec web python manage.py makemigrations
 docker compose exec web python manage.py migrate
 ```
 
-5. **Create a superuser**
+**5. Create a superuser**
 
 ```bash
 docker compose exec web python manage.py createsuperuser
 ```
 
-6. **Access the application**
+**6. Access the application**
 
 - Django dev server: `http://127.0.0.1:8000/`
 - Admin panel: `http://127.0.0.1:8000/admin/`
@@ -124,7 +131,7 @@ cd shop-kipa-project
 
 2. **Create a virtual environment**
 
-- On Mac/Linux:
+- On MacOS/Linux:
 
 ```bash
 python3 -m venv venv
