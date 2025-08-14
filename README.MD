@@ -247,6 +247,8 @@ Access the app at: `http://127.0.0.1:8000/`
 
 ## Screenshots
 
+## Here's a look at the Shop-kipa's UI:
+
 Home page:
 
 ![Home Page](assets/shop_kipa3.png)
@@ -258,8 +260,6 @@ Login/Registration page:
 Admin view (superuser):
 
 ![Admin View](assets/shop_kipa2.png)
-
-## Here's a look at the Shop-kipa's UI:
 
 ## Testing
 
