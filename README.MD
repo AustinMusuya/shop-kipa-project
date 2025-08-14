@@ -90,6 +90,8 @@ docker compose up  -d web
 **_Run on a new terminal session_**
 
 ```bash
+docker compose exec web python manage.py makemigrations
+
 docker compose exec web python manage.py migrate
 ```
 
