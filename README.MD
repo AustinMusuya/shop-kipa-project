@@ -2,6 +2,17 @@
 
 **Shop-Kipa** is a Django-based Inventory Management System designed for shopkeepers to manage their inventory, sales, and suppliers efficiently. It allows administrators to add users, assign roles, and grant permissions, while general users have read-only access by default.
 
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
 ### 1. **User Management**
@@ -33,7 +44,7 @@
 
 ---
 
-## Setup Instructions
+## Installation
 
 You can choose **one of two methods** to run Shop-Kipa:
 
@@ -216,7 +227,7 @@ Access the app at: `http://127.0.0.1:8000/`
 
 ---
 
-## How to Use
+## Usage
 
 ### Admin Features
 
@@ -234,6 +245,22 @@ Access the app at: `http://127.0.0.1:8000/`
 
 ---
 
+## Screenshots
+
+Home page:
+
+![Home Page](assets/shop_kipa3.png)
+
+Login/Registration page:
+
+![Login Page](assets/shop_kipa1.png)
+
+Admin view (superuser):
+
+![Admin View](assets/shop_kipa2.png)
+
+## Here's a look at the Shop-kipa's UI:
+
 ## Testing
 
 - Navigate through inventory, suppliers, sales sections.
@@ -246,6 +273,7 @@ Access the app at: `http://127.0.0.1:8000/`
 1. Fork the repository
 2. Create a new feature branch
 3. Submit a pull request
+4. 😄 **[Buy me coffee](https://github.com/sponsors/AustinMusuya)**
 
 ---
 
