@@ -84,7 +84,7 @@ docker compose up -d web
   - **db**: PostgreSQL
   - **web**: Django app
 
-(Be patient, it may take a while for containers to be spin up😄)
+(Be patient, it may take a while for containers to spin up😄)
 
 **_c) Check docker containers are running_**
 
