@@ -11,6 +11,11 @@ services:
       - "5433:5432"
     volumes:
       - postgresql_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRESQL_USER} -d ${POSTGRESQL_DB}"]
+      interval: 5s
+      retries: 5
+      start_period: 5s
 
   web:
     build: .
@@ -27,7 +32,8 @@ services:
       DB_HOST: db
       DB_PORT: 5432
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
 volumes:
   postgresql_data:
