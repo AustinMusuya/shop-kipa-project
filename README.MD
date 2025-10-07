@@ -79,16 +79,10 @@ DB_PORT=5432
 
 **3. Build and start containers**
 
-**_a) Start Db container first_**
+**_a) Start Containers with docker compose first_**
 
 ```bash
 docker compose up -d db
-```
-
-**_b) Start web container next_**
-
-```bash
-docker compose up -d web
 ```
 
 - This starts two containers:
@@ -97,15 +91,13 @@ docker compose up -d web
 
 (Be patient, it may take a while for containers to spin up😄)
 
-**_c) Check docker containers are running_**
+**_b) Check docker containers are running_**
 
 ```bash
 docker ps
 ```
 
 **4. Apply migrations**
-
-**_Run on a new terminal session_**
 
 ```bash
 docker compose exec web python manage.py makemigrations
